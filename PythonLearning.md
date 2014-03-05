@@ -37,7 +37,7 @@ pass 可以在创建新代码时用来做函数或控制体的占位符。可以
 ```
 ##定义函数
 定义一个具有边界的斐波那契数列，这个a, b = b ,a+b的语法真是令人惊叹
-```
+```Python
 >>> def fib(n):    # write Fibonacci series up to n
 ...     """Print a Fibonacci series up to n."""
 ...     a, b = 0, 1
@@ -46,11 +46,11 @@ pass 可以在创建新代码时用来做函数或控制体的占位符。可以
 ...         a, b = b, a+b
 ...     print()
 ...
-```
+
 >>> # Now call the function we just defined:
 ... fib(2000)
 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
-
+```
 def 定义一个函数，其后跟随函数的函数名括号和参数，一般函数体第一行写Doc String(生成项目文档)
 函数调用生成一个局部变量表，变量引用首先在局部符号表中查找，然后是包含函数的局部符号表，然后是全局符号表，最后是内置名字表。函数内部一般无法对全局变量赋值。
 
@@ -84,7 +84,7 @@ def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
 调用时，可以ask_ok('Do you ') 或者ask_ok('Do you ', 2)或者ask_ok('Do you ',2 , 'Hurry Up’)
 
 默认值只被赋值一次。这使得当默认值是可变对象时会有所不同，比如列表、字典或者大多数类的实例。例如，下面的函数在后续调用过程中会累积（前面）传给它的参数:
-```
+```Python
 def f(a, L=[]):
 	L.append(a)
 	return L
@@ -94,7 +94,7 @@ print(f(2))
 print(f(3))
 ```
 输出:
-```
+```Python
 [1]
 [1, 2]
 [1, 2, 3]
@@ -122,7 +122,8 @@ def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
 	
 	#可以使用以下方式调用：
 	parrot(voltage=1000000, action='VOOOOOM') 
-	key = value方式，若使用关键字，就都得使用
+	key = value
+	#方式，若使用关键字，就都得使用
 ```
 引入一个形如 **name 的参数时，它接收一个字典（参见 typesmapping ） ，该字典包含了所有未出现在形式参数列表中的关键字参数。这里可能还会组合使用一个形如 *name （下一小节詳細介绍） 的形式参数，它接收一个元组（下一节中会详细介绍），包含了所有没有出现在形式参数列表中的参数值。（ *name 必须在 **name 之前出现）
 示例：
@@ -169,13 +170,13 @@ def write_multiple_items(file, separator, *args):
 
 ## lambda形式
 用于定义匿名函数，例如：
-```
+```Python
 lambda x: n+x
 ```
 就会返回x与n的和
 
 比如：
-```
+```Python
 def make_increment(n):
 	return lambda x: x+n
 ```
@@ -270,7 +271,7 @@ print(sum)
 
 ## Dict
 Python内置字典，简单说就是键值对，在Java就是Map集合
-```
+```Python
 d = {'Michael': 95, 'Bob': 75, 'Tracy': 85}
 
 #赋值
@@ -301,7 +302,7 @@ dict根据key计算value的存储位置，通过key计算位置的算法就是�
 key是不可变元素，比如整型和字符串。
 
 set是一个key的集合，不能重复。要新建一个set，那么需要一个list作为输入。
-```
+```Python
 #传入一个list作为set的集合
 s = set([1, 2, 3])
 #set会自动过滤掉集合中重复的key
